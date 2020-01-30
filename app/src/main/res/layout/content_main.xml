@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:text="Welcome to Your To-Do List"
+        android:textColor="@color/textColor"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="215dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/rainbow"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="326dp"
+        android:layout_height="107dp"
+        android:background="@color/darkPink"
+        android:text="Click to Begin"
+        android:textSize="35dp"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="349dp"
+        android:layout_height="50dp"
+        android:text="Created by Sam and Chea"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="627dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
