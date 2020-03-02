@@ -41,14 +41,11 @@
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="146dp" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="374dp"
-        android:layout_height="459dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Buttons for each task, get prompted to enter new date"
-        android:textSize="15dp"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="228dp" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="345dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

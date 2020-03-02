@@ -48,6 +48,32 @@
         android:inputType="textPersonName"
         android:text="Box and Prompt would go here (For user input)"
         android:textSize="17.5dp"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="228dp" />
+        tools:layout_editor_absoluteX="-473dp"
+        tools:layout_editor_absoluteY="386dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="345dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="265dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CalendarView
+        android:id="@+id/calendarView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="368dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
