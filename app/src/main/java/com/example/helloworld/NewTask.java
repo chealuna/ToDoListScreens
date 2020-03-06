@@ -11,9 +11,46 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+//System.out.println("Add a new task");
+//        System.out.println("------------------");
+//        System.out.println("What do you need to complete? (ex. Clean Room): ");
+//        String description = scan.nextLine();
+//        System.out.println("Enter the day it is due (ex. 12): ");
+//        int due = scan.nextInt();
+//        scan.nextLine();
+//        System.out.println("Enter your task category (Work or Personal): ");
+//        String category = scan.nextLine();
+//        System.out.println("What is your task priority?");
+//        System.out.println("    1. Urgent");
+//        System.out.println("    2. In Progress");
+//        System.out.println("    3. Done");
+//        int progress = scan.nextInt();
+//        String priority;
+//        if(progress==1){
+//        priority="Urgent";
+//        } else if(progress==2){
+//        priority="In Progress";
+//        } else if (progress==3){
+//        priority="Done";
+//        } else {
+//        priority = "Not Specified";
+//        }
+//
+//        count ++;
+//        Task myTask = new Task(description, due, priority);
+//        // add task to list
+//        myList.add(myTask);
+//        //add task to file
+//        FileWriter fw = new FileWriter("MasterToDoList.txt", true);
+//        BufferedWriter writer = new BufferedWriter(fw);
+//        String line = myTask.printTaskForFile();
+//        writer.write(line);
+//        writer.newLine();
+//        writer.close();
+
 public class NewTask {
 
-    class SpecificList extends AppCompatActivity {
+    class NewTask extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

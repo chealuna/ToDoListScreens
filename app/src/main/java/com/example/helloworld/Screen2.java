@@ -8,13 +8,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 class Screen2 extends AppCompatActivity {
     Button specificList;
     Button checkOff;
     Button viewPriority;
     Button editTask;
+    Button newList;
+    Button newTask;
+    Button allTasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ class Screen2 extends AppCompatActivity {
 
 
         //2 get corresponding xml button
-        specificList = findViewById(R.id.button2);
+        specificList = findViewById(R.id.viewspecificlistbutton);
         //3 add event listener
         specificList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +36,7 @@ class Screen2 extends AppCompatActivity {
             }
         });
 
-        checkOff = findViewById(R.id.button3);
+        checkOff = findViewById(R.id.checkofftaskbutton);
         checkOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +45,7 @@ class Screen2 extends AppCompatActivity {
             }
         });
 
-        viewPriority = findViewById(R.id.button7);
+        viewPriority = findViewById(R.id.viewbyprioritybutton);
         viewPriority.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +54,7 @@ class Screen2 extends AppCompatActivity {
             }
         });
 
-        editTask = findViewById(R.id.button4);
+        editTask = findViewById(R.id.edittaskbutton);
         editTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,11 +63,28 @@ class Screen2 extends AppCompatActivity {
             }
         });
 
-        newList = findViewById(R.id.button8);
-        newList.setOnClickListener(new view.OnClickListener() {
+        newList = findViewById(R.id.createnewlistbutton);
+        newList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Screen2.this,NewList.class);
+                startActivity(intent);
+            }
+        });
+
+        newTask = findViewById(R.id.addnewtaskbutton);
+        newTask.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(Screen2.this,NewTask.class);
+                startActivity(intent);
+            }
+        });
+
+        allTasks = findViewById(R.id.viewalltasksbutton);
+        allTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Screen2.this,AllTasks.class);
                 startActivity(intent);
             }
         });

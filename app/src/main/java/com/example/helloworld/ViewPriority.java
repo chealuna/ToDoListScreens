@@ -8,38 +8,39 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+//System.out.println("    8. View By Priority");
+//        System.out.println("------------------");
+//        ArrayList<Task> priorityList = new ArrayList<Task>();
+//        for(Task t: myList){
+//        if(t.getPriority().equals("Urgent")){
+//        priorityList.add(t);
+//        }
+//        }
+//        for(Task t: myList){
+//        if(t.getPriority().equals("In Progress")){
+//        priorityList.add(t);
+//        }
+//        }
+//        for(Task t: myList){
+//        if(t.getPriority().equals("Done")){
+//        priorityList.add(t);
+//        }
+//        }
+//        for (Task task: priorityList){
+//        task.printTask();
+//        }
+//        }
+//        else {
+//        System.out.println("Invalid choice, try again.");
 
-class ChangeDate {
-package com.example.helloworld;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-    class SpecificList extends AppCompatActivity {
+public class ViewPriority extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.screen2);
+            setContentView(R.layout.view_priority);
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
 
         }
 
@@ -63,5 +64,3 @@ import com.google.android.material.snackbar.Snackbar;
             return super.onOptionsItemSelected(item);
         }
     }
-
-}
