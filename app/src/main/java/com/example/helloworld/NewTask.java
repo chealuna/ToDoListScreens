@@ -11,6 +11,11 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+String setName;
+String setCategory;
+String setPriority;
+Int setDate;
+
 //System.out.println("Add a new task");
 //        System.out.println("------------------");
 //        System.out.println("What do you need to complete? (ex. Clean Room): ");
@@ -86,6 +91,38 @@ public class NewTask {
                 return true;
             }
             return super.onOptionsItemSelected(item);
+        }
+
+        //name of task
+        public static void setName(Context context, String name) {
+            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("name", name);
+            editor.commit();
+        }
+
+        //category
+        public static void setCategory(Context context, String category) {
+            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("category", category);
+            editor.commit();
+        }
+
+        //priority
+        public static void setPriority(Context context, String priority) {
+            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("priority", priority);
+            editor.commit();
+        }
+
+        //date
+        public static void setDate(Context context, String date) {
+            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("date", date);
+            editor.commit();
         }
     }
 
