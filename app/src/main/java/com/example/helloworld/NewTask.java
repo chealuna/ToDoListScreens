@@ -1,21 +1,13 @@
 package com.example.helloworld;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
-String setName;
-String setCategory;
-String setPriority;
-Int setDate;
-
 //System.out.println("Add a new task");
 //        System.out.println("------------------");
 //        System.out.println("What do you need to complete? (ex. Clean Room): ");
@@ -52,9 +44,32 @@ Int setDate;
 //        writer.write(line);
 //        writer.newLine();
 //        writer.close();
-
 public class NewTask {
-
+    saveButton.setOnClickListener(new View.OnClickListener()){
+        @Override
+        public void onClick(View view) {
+            final EditText name = name.findViewById(R.id.editText);
+            name.getText().toString();
+            final EditText priority = (EditTask) findViewById(R.id.priority_input);
+            priority.getText().toString();
+            final EditText  date= (EditTask) findViewById(R.id.date_input);
+            date.getText().toString();
+        }
+//        Checkbox urgent = findViewById(R.id.urgent);
+//        If (urgent.isChecked) {
+//            String taskPriority = "urgent";
+//        }
+//
+//        DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker1);
+//        int day = datePicker.getDayOfMonth();
+//        int month = datePicker.getMonth() +1;
+//        int year = datePicker.getYear();
+//        dateForTask= (String) day + month + year;
+//            Task newTask = Task.createTask(name, dateForTask);
+//
+//
+//
+    }
     class NewTask extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +85,13 @@ public class NewTask {
                             .setAction("Action", null).show();
                 }
             });
-
         }
-
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
             // Inflate the menu; this adds items to the action bar if it is present.
             getMenuInflater().inflate(R.menu.menu_main, menu);
             return true;
         }
-
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
             // Handle action bar item clicks here. The action bar will
@@ -92,38 +104,5 @@ public class NewTask {
             }
             return super.onOptionsItemSelected(item);
         }
-
-        //name of task
-        public static void setName(Context context, String name) {
-            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("name", name);
-            editor.commit();
-        }
-
-        //category
-        public static void setCategory(Context context, String category) {
-            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("category", category);
-            editor.commit();
-        }
-
-        //priority
-        public static void setPriority(Context context, String priority) {
-            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("priority", priority);
-            editor.commit();
-        }
-
-        //date
-        public static void setDate(Context context, String date) {
-            SharedPreferences prefs = context.getSharedPreferences("myAppPackage", 0);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("date", date);
-            editor.commit();
-        }
     }
-
 }
