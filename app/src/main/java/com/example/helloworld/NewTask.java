@@ -8,6 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+//imports for Method #1
+import java.util.Scanner;
+import java.io.File;
+
+//     String taskLocation="taskLocation"+taskName;
+//     Task task = new Task(taskLocation);
+
+
 //System.out.println("Add a new task");
 //        System.out.println("------------------");
 //        System.out.println("What do you need to complete? (ex. Clean Room): ");
@@ -55,6 +64,44 @@ public class NewTask {
             final EditText  date= (EditTask) findViewById(R.id.date_input);
             date.getText().toString();
         }
+
+
+
+
+
+
+           //POSSIBLE CREATE TASK FROM USER INPUT METHODS
+
+            // #1
+            public class TestFile {
+                public static void main(String[] args) throws IOException {
+                    Scanner input = new Scanner(System.in);
+//                    System.out.print("Enter the desired name of your task: ");
+                    String taskName = input.nextLine();
+                    taskName = taskName + ".txt";
+
+                    Task file = new Task(taskName);
+                    task.createNewFile();
+                }
+            }
+
+            //#2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        Checkbox urgent = findViewById(R.id.urgent);
 //        If (urgent.isChecked) {
 //            String taskPriority = "urgent";
@@ -65,10 +112,9 @@ public class NewTask {
 //        int month = datePicker.getMonth() +1;
 //        int year = datePicker.getYear();
 //        dateForTask= (String) day + month + year;
-//            Task newTask = Task.createTask(name, dateForTask);
-//
-//
-//
+
+
+
     }
     class NewTask extends AppCompatActivity {
         @Override

@@ -1,7 +1,6 @@
 package com.example.helloworld;
 import java.util.ArrayList;
 
-public class Task {
     public class Task {
         //instance variables
         String task;

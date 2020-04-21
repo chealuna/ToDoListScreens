@@ -47,9 +47,11 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="327dp"
-        android:layout_height="312dp"
-        tools:layout_editor_absoluteX="43dp"
+        android:layout_width="390dp"
+        android:layout_height="265dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="386dp" />
 
 
@@ -102,5 +104,14 @@
         android:layout_height="45dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="271dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:text="SAVE"
+        android:textSize="17.5dp"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="656dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
