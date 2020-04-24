@@ -3,6 +3,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -54,6 +57,8 @@ import java.io.File;
 //        writer.newLine();
 //        writer.close();
 public class NewTask {
+
+    Button saveButton = findViewById(R.id.button2);
     saveButton.setOnClickListener(new View.OnClickListener()){
         @Override
         public void onClick(View view) {
@@ -63,8 +68,10 @@ public class NewTask {
             name.getText().toString();
 
             //priority
-            final EditText priority = (EditTask) findViewById(R.id.priority_input);
-            priority.getText().toString();
+            CheckBox urgent = findViewById(R.id.checkBoxUrgent);
+            If (urgent.isChecked) {
+                String taskPriority = “urgent”;
+            }
 
             //date
             DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker1);
