@@ -57,14 +57,22 @@ public class NewTask {
     saveButton.setOnClickListener(new View.OnClickListener()){
         @Override
         public void onClick(View view) {
+
+           //name
             final EditText name = name.findViewById(R.id.editText);
             name.getText().toString();
+
+            //priority
             final EditText priority = (EditTask) findViewById(R.id.priority_input);
             priority.getText().toString();
-            final EditText  date= (EditTask) findViewById(R.id.date_input);
-            date.getText().toString();
-        }
 
+            //date
+            DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker1);
+            int day = datePicker.getDayOfMonth();
+            int month = datePicker.getMonth() + 1;
+            int year = datePicker.getYear();
+            dateForTask = (String)  day + month + year;
+        }
 
 
 
@@ -86,15 +94,6 @@ public class NewTask {
             }
 
             //#2
-
-
-
-
-
-
-
-
-
 
 
 
