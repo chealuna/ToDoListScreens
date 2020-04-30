@@ -15,32 +15,76 @@ import com.google.android.material.snackbar.Snackbar;
 //imports for Method #1
 import java.util.Scanner;
 
-public class NewTask {
+public class NewTask extends AppCompatActivity{
 
-    Button saveButton = findViewById(R.id.button2);
-    saveButton.setOnClickListener(new View.OnClickListener()){
-        @Override
-        public void onClick(View view) {
-
-           //name
-            final EditText name = name.findViewById(R.id.editText);
-            name.getText().toString();
-
-            //priority
-            CheckBox urgent = findViewById(R.id.checkBoxUrgent);
-            If (urgent.isChecked) {
-                String taskPriority = “urgent”;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.screen2);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
+        });
 
-            //date
-            DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker1);
-            int day = datePicker.getDayOfMonth();
-            int month = datePicker.getMonth() + 1;
-            int year = datePicker.getYear();
-            dateForTask = (String)  day + month + year;
+        Button saveButton = findViewById(R.id.button2);
+        saveButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                //name
+                final EditText name = findViewById(R.id.editText);
+                name.getText().toString();
+
+                //priority
+                CheckBox urgent = findViewById(R.id.checkBoxUrgent);
+                if (urgent.isChecked()) {
+                    String taskPriority = "urgent";
+                }
+
+                CheckBox inProgress = findViewById(R.id.checkBoxInProgress);
+                if (inProgress.isChecked()) {
+                    String taskPriority = "inProgress";
+                }
+
+                CheckBox done = findViewById(R.id.checkBoxDone);
+                if (done.isChecked()) {
+                    String taskPriority = "done";
+                }
+
+                //date
+                DatePicker datePicker = findViewById(R.id.calendarView);
+                int day = datePicker.getDayOfMonth();
+                int month = datePicker.getMonth() + 1;
+                int year = datePicker.getYear();
+                String dateForTask = month + "/" + day + "/" + year;
+                }
+
+    });
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
         }
-
-
+        return super.onOptionsItemSelected(item);
+    }
 
 
 
@@ -59,57 +103,6 @@ public class NewTask {
                 }
             }
 
-            //#2
-        Checkbox urgent = findViewById(R.id.urgent);
-        If (urgent.isChecked) {
-            String taskPriority = "urgent";
-        }
-
-        Checkbox inProgress = findViewById(R.id.inProgress);
-        If (urgent.isChecked) {
-            String taskPriority = "inProgress";
-        }
-
-        Checkbox done = findViewById(R.id.done);
-        If (urgent.isChecked) {
-            String taskPriority = "done";
-        }
-
-
     }
-    class NewTask extends AppCompatActivity {
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.screen2);
-            Toolbar toolbar = findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-            FloatingActionButton fab = findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
-        }
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            // Handle action bar item clicks here. The action bar will
-            // automatically handle clicks on the Home/Up button, so long
-            // as you specify a parent activity in AndroidManifest.xml.
-            int id = item.getItemId();
-            //noinspection SimplifiableIfStatement
-            if (id == R.id.action_settings) {
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-    }
+
 }
