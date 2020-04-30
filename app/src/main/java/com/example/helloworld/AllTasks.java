@@ -7,13 +7,6 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-//if (choice == 1) {
-//        System.out.println("All Tasks");
-//        System.out.println("------------------");
-//        for (Task task: myList){
-//        task.printTask();
-//        }
-
 class AllTasks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

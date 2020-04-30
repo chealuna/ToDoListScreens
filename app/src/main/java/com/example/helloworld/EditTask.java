@@ -7,31 +7,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-//System.out.println("Change date for task");
-//        for (Task task: myList){
-//        task.printTask();
-//        }
-//        System.out.println("What task would you like to edit? (choose the number) ");
-//        int editDate = scan.nextInt();
-//        System.out.println("Please type in your new date");
-//        int nDate = scan.nextInt();
-//        for (int i = 0; i < myList.size(); i++){
-//        if(editDate == myList.get(i).index){
-//        myList.get(i).date = nDate;
-//        myList.get(i).printTask();
-//        }
-//
-//        System.out.println("Create New To-Do List");
-//        System.out.println("Please enter your to do list name.");
-//        //createTaskListFromFile();
-//        String fileName = scan.nextLine();
-//        try {
-//        out = new FileOutputStream(fileName + ".txt");
-//        out.write((fileName + " To Do List\n").getBytes());
-//        out.write("----------------------------".getBytes());
-//        } catch (IOException x){
-//        System.out.println(x);
-//        }
+
 
 class EditTask extends AppCompatActivity {
     @Override
