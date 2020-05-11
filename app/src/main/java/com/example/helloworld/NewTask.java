@@ -23,17 +23,9 @@ public class NewTask extends AppCompatActivity{
         setContentView(R.layout.screen2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         Button saveButton = findViewById(R.id.button2);
-        saveButton.setOnClickListener(new View.OnClickListener(){
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -63,9 +55,15 @@ public class NewTask extends AppCompatActivity{
                 int month = datePicker.getMonth() + 1;
                 int year = datePicker.getYear();
                 String dateForTask = month + "/" + day + "/" + year;
-                }
 
-    });
+                //combine all your pieces of information into one task object
+                //Task newTask = new Task(name,etc...)
+
+                //Save task in database as in exam app
+            }
+
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,6 +71,7 @@ public class NewTask extends AppCompatActivity{
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -84,25 +83,6 @@ public class NewTask extends AppCompatActivity{
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-
-           //POSSIBLE CREATE TASK FROM USER INPUT METHODS
-
-            // #1
-            public class TestFile {
-                public static void main(String[] args) throws IOException {
-                    Scanner input = new Scanner(System.in);
-//                    System.out.print("Enter the desired name of your task: ");
-                    String taskName = input.nextLine();
-                    taskName = taskName + ".txt";
-
-                    Task file = new Task(taskName);
-                    task.createNewFile();
-                }
-            }
-
     }
 
 }
