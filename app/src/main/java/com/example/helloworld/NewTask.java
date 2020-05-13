@@ -67,6 +67,18 @@ public class NewTask extends AppCompatActivity{
 
     });
 
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+        }
+        DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                .taskDao()
+                .insert(task);
+        return null;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
