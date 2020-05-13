@@ -1,4 +1,6 @@
 package com.example.helloworld;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -7,6 +9,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,12 +30,29 @@ public class NewTask extends AppCompatActivity{
 
         Button saveButton = findViewById(R.id.button2);
         saveButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
                 //name
                 final EditText name = findViewById(R.id.editText);
                 name.getText().toString();
+
+                //category
+                CheckBox work = findViewById(R.id.checkBoxWork);
+                if (work.isChecked()) {
+                    String taskCategory = "Work";
+                }
+
+                CheckBox personal = findViewById(R.id.checkBoxPersonal);
+                if (personal.isChecked()) {
+                    String taskCategory = "Personal";
+                }
+
+                CheckBox other = findViewById(R.id.checkBoxOther);
+                if (other.isChecked()) {
+                    String taskCategory = "Other";
+                }
 
                 //priority
                 CheckBox urgent = findViewById(R.id.checkBoxUrgent);
@@ -62,8 +83,17 @@ public class NewTask extends AppCompatActivity{
                 //Save task in database as in exam app
             }
 
+            class SaveTask extends AsyncTask<Void, Void, Void> {
+                @Override
+                protected Void doInBackground(Void... voids) {
+
+                    Task task = new Task(name, dateForTask, taskPriority);
+
+                }
+            }
         });
     }
+
 
         @Override
         protected void onPostExecute(Void aVoid) {

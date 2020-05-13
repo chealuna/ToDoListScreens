@@ -24,10 +24,11 @@ public class Task implements Serializable {
     @ColumnInfo(name = "tag")
     String tag;
 
-    //give these two columninfo annotations as well
+    @ColumnInfo(name = "category")
     String category;
-    String priority;
 
+    @ColumnInfo(name = "priority")
+    String priority;
 
     public static void main(String[] args) {
     }
@@ -40,9 +41,10 @@ public class Task implements Serializable {
         index = 0;
         priority = "Urgent";
     }
-    public Task(String t, int d, String pri){
+    public Task(String t, int d, String c, String pri){
         task = t;
         date = d;
+        category = c;
         priority = pri;
     }
     public String getPriority(){
