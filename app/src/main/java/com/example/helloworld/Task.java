@@ -23,6 +23,8 @@ public class Task implements Serializable {
 
     @ColumnInfo(name = "tag")
     String tag;
+
+    //give these two columninfo annotations as well
     String category;
     String priority;
 
