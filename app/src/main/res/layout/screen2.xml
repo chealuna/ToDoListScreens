@@ -12,8 +12,10 @@
         android:layout_width="334dp"
         android:layout_height="57dp"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="646dp"
         android:text="Table of Contents"
         android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +25,17 @@
         android:id="@+id/imageView"
         android:layout_width="178dp"
         android:layout_height="113dp"
-        app:srcCompat="@drawable/rainbow"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="85dp" />
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginRight="117dp"
+        android:layout_marginBottom="533dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rainbow" />
 
     <Button
         android:id="@+id/viewalltasksbutton"
@@ -53,9 +63,14 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="265dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="408dp"
         android:background="@color/orange"
         android:text="View Specific List"
         android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,14 +78,19 @@
         android:id="@+id/addnewtaskbutton"
         android:layout_width="360dp"
         android:layout_height="58dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="336dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         android:layout_marginBottom="337dp"
         android:background="@color/yellow"
         android:text="Add a New Task"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/checkofftaskbutton"
@@ -94,34 +114,55 @@
         android:id="@+id/edittaskbutton"
         android:layout_width="360dp"
         android:layout_height="58dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="203dp"
         android:background="@color/blue"
         android:text="Edit Task"
         android:textSize="25dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/viewbyprioritybutton"
         android:layout_width="360dp"
         android:layout_height="58dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         android:layout_marginBottom="133dp"
         android:background="@color/purple"
         android:text="View By Priority"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="30dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/createnewlistbutton"
         android:layout_width="360dp"
         android:layout_height="58dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="609dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="64dp"
         android:background="@color/darkPurple"
         android:text="Create New To-Do List"
         android:textSize="25dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="609dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
