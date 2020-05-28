@@ -12,7 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 class EditTask extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {x
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen2);
         Toolbar toolbar = findViewById(R.id.toolbar);

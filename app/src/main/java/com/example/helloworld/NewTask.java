@@ -20,7 +20,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.Scanner;
 
 public class NewTask extends AppCompatActivity{
-
+  public String taskCategory;
+  //TODO make ones for other properties too
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,17 +42,17 @@ public class NewTask extends AppCompatActivity{
                 //category
                 CheckBox work = findViewById(R.id.checkBoxWork);
                 if (work.isChecked()) {
-                    String taskCategory = "Work";
+                    taskCategory = "Work";
                 }
 
                 CheckBox personal = findViewById(R.id.checkBoxPersonal);
                 if (personal.isChecked()) {
-                    String taskCategory = "Personal";
+                    taskCategory = "Personal";
                 }
 
                 CheckBox other = findViewById(R.id.checkBoxOther);
                 if (other.isChecked()) {
-                    String taskCategory = "Other";
+                    taskCategory = "Other";
                 }
 
                 //priority
@@ -77,35 +78,31 @@ public class NewTask extends AppCompatActivity{
                 int year = datePicker.getYear();
                 String dateForTask = month + "/" + day + "/" + year;
 
-                //combine all your pieces of information into one task object
-                //Task newTask = new Task(name,etc...)
-
-                //Save task in database as in exam app
             }
 
             class SaveTask extends AsyncTask<Void, Void, Void> {
                 @Override
                 protected Void doInBackground(Void... voids) {
 
-                    Task task = new Task(name, dateForTask, taskPriority);
+                    Task task = new Task(name, dateForTask, taskCategory, taskPriority);
+                    DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                            .taskDao()
+                            .insert(task);
+                    return null;
 
+                }
+                @Override
+                protected void onPostExecute(Void aVoid) {
+                    super.onPostExecute(aVoid);
+                    finish();
+                    //TODO: decide where to send user after the new task is saved and change this
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            finish();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-        }
-        DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
-                .taskDao()
-                .insert(task);
-        return null;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
