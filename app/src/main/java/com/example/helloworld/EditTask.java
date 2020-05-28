@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,6 +39,30 @@ class EditTask extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    class SaveTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            Task task = new Task(name, dateForTask, taskPriority);
+
+        }
+    }
+});
+        }
+
+
+@Override
+protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
+        finish();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+        }
+        DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+        .taskDao()
+        .insert(task);
+        return null;
 }
 
 
