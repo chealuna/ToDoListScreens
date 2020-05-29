@@ -50,7 +50,6 @@
         android:background="@color/pink"
         android:text="View All Tasks"
         android:textSize="25dp"
-        app:layout_constrainedWidth=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

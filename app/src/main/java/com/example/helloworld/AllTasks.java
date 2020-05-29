@@ -1,11 +1,14 @@
 package com.example.helloworld;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.util.List;
 
 class AllTasks extends AppCompatActivity {
     @Override
@@ -14,7 +17,7 @@ class AllTasks extends AppCompatActivity {
         setContentView(R.layout.screen2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getTasks();
     }
 
     @Override
@@ -35,6 +38,30 @@ class AllTasks extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void getTasks() {
+        class GetTasks extends AsyncTask<Void, Void, List<Task>> {
+
+            @Override
+            protected List<Task> doInBackground(Void... voids) {
+                List<Task> taskList = DatabaseClient
+                        .getInstance(getApplicationContext())
+                        .getAppDatabase()
+                        .taskDao()
+                        .getAll();
+                return taskList;
+            }
+
+            @Override
+            protected void onPostExecute(List<Task> tasks) {
+                super.onPostExecute(tasks);
+//                TasksAdapter adapter = new TasksAdapter(AllTasks.this, tasks);
+//                recyclerView.setAdapter(adapter);
+            }
+        }
+
+        GetTasks gt = new GetTasks();
+        gt.execute();
     }
 }
 

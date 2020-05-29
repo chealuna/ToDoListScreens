@@ -1,9 +1,11 @@
 package com.example.helloworld;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 
 
 class EditTask extends AppCompatActivity {
+    //TODO make class variables for task name, date, etc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,30 +43,30 @@ class EditTask extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class SaveTask extends AsyncTask<Void, Void, Void> {
+    private class SaveEditedTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            Task task = new Task(name, dateForTask, taskPriority);
-
+            Task task = new Task("name", 5, "taskPriority", "taskPriority");
+            DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                    .taskDao()
+                    .insert(task);
+            return null;
         }
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            finish();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+        }
+
     }
-});
-        }
+    }
 
 
-@Override
-protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
-        finish();
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
-        }
-        DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
-        .taskDao()
-        .insert(task);
-        return null;
-}
+
+
 
 
 

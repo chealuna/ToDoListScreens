@@ -11,47 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-class NewList {
-    package com.example.helloworld;
-
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-    class ChangeDate {
-package com.example.helloworld;
-
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-//System.out.println("Create New To-Do List");
-//                System.out.println("Please enter your to do list name.");
-//        //createTaskListFromFile();
-//        String fileName = scan.nextLine();
-//                try {
-//            out = new FileOutputStream(fileName + ".txt");
-//            out.write((fileName + " To Do List\n").getBytes());
-//            out.write("----------------------------".getBytes());
-//        } catch (IOException x){
-//            System.out.println(x);
-//        }
-
-        class NewList extends AppCompatActivity {
+class NewList extends AppCompatActivity {
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -82,6 +42,6 @@ import com.google.android.material.snackbar.Snackbar;
             }
         }
 
-    }
 
-}
+
+

@@ -84,7 +84,7 @@ public class NewTask extends AppCompatActivity{
                 @Override
                 protected Void doInBackground(Void... voids) {
 
-                    Task task = new Task(name, dateForTask, taskCategory, taskPriority);
+                    Task task = new Task("name", 5, taskCategory, "taskPriority");
                     DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
                             .taskDao()
                             .insert(task);
